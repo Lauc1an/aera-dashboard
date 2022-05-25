@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{{ route('login') }}">Ingresar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Registrarse</a>
+                    <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                 </li>
                 @endguest
 
