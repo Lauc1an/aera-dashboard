@@ -18,6 +18,9 @@
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Mantener sesión</label>
                     </div>
+                    @if (Route::has('password.request'))
+                    <a class="d-block text-decoration-none mb-3" href="{{ route('password.request') }}">Olvidé mi contraseña</a>
+                    @endif
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </form>
             </div>

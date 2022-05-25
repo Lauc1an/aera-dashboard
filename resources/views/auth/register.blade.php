@@ -17,12 +17,10 @@
                         <label for="password">Contraseña:</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-
                     <div class="form-group">
                         <label for="password_confirmation">Confirmar contraseña:</label>
                         <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </form>
             </div>
