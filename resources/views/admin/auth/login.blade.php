@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-4">
@@ -10,13 +10,13 @@
                     </button>
                 </div>
                 @endif
-                <h1>Ingresar</h1>
-                <form method="POST" action="{{ route('login') }}">
+                <h1>Ingresar Panel</h1>
+                <form method="POST" action="{{ route('admin.login') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Correo:</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autofocus>
-                        @error('email')
+                        <label for="name">Usuario:</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
+                        @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -31,12 +31,10 @@
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Mantener sesión</label>
                     </div>
-                    @if (Route::has('password.request'))
-                    <a class="d-block text-decoration-none mb-3" href="{{ route('password.request') }}">Olvidé mi contraseña</a>
-                    @endif
+                    {{-- <a class="d-block text-decoration-none mb-3" href="{{ route('password.request') }}">Olvidé mi contraseña</a> --}}
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </form>
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>
