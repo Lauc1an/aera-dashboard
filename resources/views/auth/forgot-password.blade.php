@@ -15,7 +15,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="email">Correo:</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }} required autofocus>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autofocus>
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
