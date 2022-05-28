@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordAdminNotification as ResetPasswordAdmin;
 
 class Admin extends Authenticatable
 {
@@ -24,5 +25,10 @@ class Admin extends Authenticatable
     protected $casts = [
         'created_at' => 'datetime',
     ];
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordAdmin($token));
+    }
 
 }

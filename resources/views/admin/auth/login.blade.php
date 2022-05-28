@@ -31,7 +31,7 @@
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Mantener sesión</label>
                     </div>
-                    {{-- <a class="d-block text-decoration-none mb-3" href="{{ route('password.request') }}">Olvidé mi contraseña</a> --}}
+                    <a class="d-block text-decoration-none mb-3" href="{{ route('admin.password.request') }}">Olvidé mi contraseña</a>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </form>
             </div>
