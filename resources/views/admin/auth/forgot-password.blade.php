@@ -1,28 +1,19 @@
 <x-guest-layout>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-4">
-                @if (session('status'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('status') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                @endif
-                <h1>Olvidé mi contraseña del Panel</h1>
-                <form method="POST" action="{{ route('admin.password.email') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="email">Correo:</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autofocus>
-                        @error('email')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar enlace de restablecimiento</button>
-                </form>
-            </div>
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+            <x-auth-session-status class="mb-4" :status="session('status')" />
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <form class="form-signin" method="POST" action="{{ route('admin.password.email') }}">
+                <x-application-logo title="Reestablecer contraseña" />
+                @csrf
+                <label for="name" class="sr-only">Correo</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="Correo" required >
+                <button type="submit" class="btn btn-lg btn-orange btn-block text-white mt-2">Enviar</button>
+                <a class="d-block text-white text-center mt-2" href="{{ route('admin.login')}}">
+                    Iniciar sesión
+                </a>
+                <p class="mt-5 mb-3 text-muted text-center">Aera Studio &copy; 2018-{{ date("Y") }}</p>
+            </form>
         </div>
     </div>
 </x-guest-layout>

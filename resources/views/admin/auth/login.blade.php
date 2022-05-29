@@ -1,40 +1,21 @@
 <x-guest-layout>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-4">
-                @if (session('status'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('status') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                @endif
-                <h1>Ingresar Panel</h1>
-                <form method="POST" action="{{ route('admin.login') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="name">Usuario:</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
-                        @error('name')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
-                        @error('password')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                        <label class="form-check-label" for="remember">Mantener sesión</label>
-                    </div>
-                    <a class="d-block text-decoration-none mb-3" href="{{ route('admin.password.request') }}">Olvidé mi contraseña</a>
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-                </form>
-            </div>
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+            <x-auth-session-status class="mb-4" :status="session('status')" />
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <form class="form-signin" method="POST" action="{{ route('admin.login') }}">
+                <x-application-logo title="Panel de Administración" />
+                @csrf
+                <label for="name" class="sr-only">Usuario</label>
+                <input class="form-control" type="text" name="name" id="name" placeholder="Usuario" value="{{ old('name') }}" required >
+                <label for="password" class="sr-only">Contraseña</label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required >
+                <button type="submit" class="btn btn-lg btn-orange btn-block text-white">Ingresar</button>
+                <a class="d-block text-decortion-none text-white text-center mt-2" href="{{ route('admin.password.request')}}">
+                    ¿Olvidaste tu contraseña?
+                </a>
+                <p class="mt-5 mb-3 text-muted text-center">Aera Studio &copy; 2018-{{ date("Y") }}</p>
+            </form>
         </div>
     </div>
 </x-guest-layout>
