@@ -1,0 +1,46 @@
+//
+$orange: #ff8c00;
+$white: #FFFFFF;
+$gray: #333333;
+$less-gray: #434343;
+$dark-gray: #222222;
+$light-gray: #787878;
+$black: #1d1d1d;
+
+// Coleccion de colores
+$rojo-claro: #d45b5b;
+$verde: #009e94;
+$naranja: #de660e;
+$celeste: #0078ff;
+$fucsia: #d242a0;
+$amarillo: #ffd132;
+
+$sidebar-width: 200px;
+$sidebar-dark-bg: $gray;
+$sidebar-dark-color: $white;
+$sidebar-dark-hover-color: $white;
+$sidebar-dark-hover-bg: $less-gray;
+$sidebar-dark-submenu-bg: $dark-gray;
+$sidebar-dark-submenu-color: $white;
+$sidebar-dark-submenu-hover-color: $white;
+$sidebar-dark-submenu-hover-bg: $less-gray;
+$sidebar-dark-submenu-active-color: $orange;
+$sidebar-dark-submenu-active-bg: $less-gray !important;
+
+$main-bg: $dark-gray;
+$main-footer-bg: $gray;
+
+$font-family-base: 'Oswald', sans-serif;
+$font-weight-base: 300;
+$body-bg: $dark-gray;
+
+$theme-colors: (
+  "gray": $gray,
+  "orange": $orange,
+  "secondary": $light-gray
+);
+
+$custom-file-text: (
+  en: "Browse",
+  es: "Abrir"
+);
