@@ -14,6 +14,24 @@
         </div>
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+            @foreach ($menuTree as $menu)
+                <li class="nav-item has-treeview {{ request()->segment(2) == $menu['segment'] ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon {{ $menu['nav-icon'] }}"></i>
+                        <p>{{ $menu['name'] }}<i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    @foreach ($menu['submenu'] as $submenu)
+                        <li class="nav-item">
+                            <a href="{{ route($submenu['route']) }}" class="nav-link {{ Route::current()->getName() == $submenu['route'] || Route::current()->getName() == $submenu['route-crud'] ? 'active' : '' }}">
+                                <i class="nav-icon {{ $submenu['nav-icon'] }}"></i>
+                                <p>{{ $submenu['name'] }}</p>
+                            </a>
+                        </li>
+                    @endforeach
+                    </ul>
+                </li>
+            @endforeach
 
                 {{-- <li class="nav-item has-treeview {{ request()->segment(2) == 'registros' ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#" class="nav-link">
