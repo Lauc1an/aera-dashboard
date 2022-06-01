@@ -5,40 +5,16 @@
  *   License: Open source - MIT <https://opensource.org/licenses/MIT>
  */
 
-// Bootstrap
-// ---------------------------------------------------
-// @import "~bootstrap/scss/functions";
-// @import "~admin-lte/build/scss/bootstrap-variables";
-// @import "~bootstrap/scss/bootstrap";
-
-// Variables and Mixins
-// ---------------------------------------------------
 @import "~admin-lte/build/scss/variables";
 @import "~admin-lte/build/scss/variables-alt";
-
-//
-// General: Mixins
-//
-// @import "~admin-lte/build/scss/mixins/animations";
-@import "~admin-lte/build/scss/mixins/scrollbar";
-// @import "~admin-lte/build/scss/mixins/cards";
-@import "~admin-lte/build/scss/mixins/sidebar";
-@import "~admin-lte/build/scss/mixins/navbar";
-// @import "~admin-lte/build/scss/mixins/accent";
-// @import "~admin-lte/build/scss/mixins/custom-forms";
-// @import "~admin-lte/build/scss/mixins/backgrounds";
-@import "~admin-lte/build/scss/mixins/dark-mode";
-// @import "~admin-lte/build/scss/mixins/direct-chat";
-// @import "~admin-lte/build/scss/mixins/toasts";
-// @import "~admin-lte/build/scss/mixins/touch-support";
-@import "~admin-lte/build/scss/mixins/miscellaneous";
-
-
+@import "~admin-lte/build/scss/mixins";
 
 @import "~admin-lte/build/scss/parts/core";
-// @import "~admin-lte/build/scss/parts/components";
+@import "~admin-lte/build/scss/parts/components";
 // @import "~admin-lte/build/scss/parts/extra-components";
 // @import "~admin-lte/build/scss/parts/pages";
 // @import "~admin-lte/build/scss/parts/plugins";
-// @import "~admin-lte/build/scss/parts/miscellaneous";
-// SassError: Top-level selectors may not contain the parent selector "&".
+@import "~admin-lte/build/scss/parts/miscellaneous";
+
+// Fix build errors as following comment
+// https://github.com/ColorlibHQ/AdminLTE/issues/4255#issuecomment-1048403249

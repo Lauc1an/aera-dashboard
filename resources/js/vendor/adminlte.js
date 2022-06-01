@@ -7,7 +7,7 @@ import Dropdown from 'admin-lte/build/js/Dropdown'
 // import Fullscreen from 'admin-lte/build/js/Fullscreen'
 // import IFrame from 'admin-lte/build/js/IFrame'
 import Layout from 'admin-lte/build/js/Layout'
-// import PushMenu from 'admin-lte/build/js/PushMenu'
+import PushMenu from 'admin-lte/build/js/PushMenu'
 // import SidebarSearch from 'admin-lte/build/js/SidebarSearch'
 // import NavbarSearch from 'admin-lte/build/js/NavbarSearch'
 // import Toasts from 'admin-lte/build/js/Toasts'
@@ -24,7 +24,7 @@ export {
     // Fullscreen,
     // IFrame,
     Layout,
-    // PushMenu,
+    PushMenu,
     // SidebarSearch,
     // NavbarSearch,
     // Toasts,
