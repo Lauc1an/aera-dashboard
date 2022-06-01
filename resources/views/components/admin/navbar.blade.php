@@ -20,9 +20,12 @@
                 <p class="mb-0 d-inline">Ver Web</p>
             </a>
         </span>
-        {{-- <button class="btn btn-link d-flex align-items-center" wire:click="logout">
-            <p class="mb-0 mr-2">SALIR</p>
-            <img src="{{ asset('images/panel/exit-icon.svg') }}" height="20" alt="Exit Icon">
-        </button> --}}
+        <form class="form-inline" method="POST" action="{{ route('admin.logout') }}">
+            @csrf
+            <button class="btn btn-link d-flex align-items-center text-decoration-none" type="submit">
+                <p class="mb-0 mr-2">SALIR</p>
+                <img src="{{ asset('images/panel/exit-icon.svg') }}" height="20" alt="Exit Icon">
+            </button>
+        </form>
     </div>
 </nav>
